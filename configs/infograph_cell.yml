@@ -1,0 +1,63 @@
+ENGINE: #For this section ensure none of the keys are missing
+  epochs: 150
+  save_loc: ./results #Empty save loc indicates no save location
+  resume_loc: #Empty resume loc indicates no need to resume
+  transfer_loc: 
+  save_freq: 30
+  gpu_devices: [0]
+  use_dataparallel: false
+  location_mod:
+  random_seed: 0
+
+METRIC:
+  subclass_name: dgi
+  n_classes: 7
+
+MODEL:
+  subclass_name: bracs_disc
+  model_name: GNN_ASAP_bn
+  in_channel: 518
+  hidden_channel: 256
+  out_channel: 256
+  num_gc_layers: 4
+  batch_norm: true
+  pooling: false
+
+DATASET:
+  subclass_name: bracs_full_v2
+  path: ./BRACS_dataset_prev
+  class_name_list: ["0_N", "1_PB", "2_UDH", "3_ADH", "4_FEA", "5_DCIS", "6_IC"]
+  feat_folder: graph_obj_simclr_v2
+  add_pos: false
+  train_batch_size: 32
+  test_batch_size: 32
+
+LOGGER:
+  subclass_name:
+  use_wandb: true 
+  watch_gradients: false
+  project_name: BRACS_final
+  run_name: cell_graph_infograph
+  notes: Cell graph saving model
+  tags: ["cell_graph","final","seed"]
+
+#not used here but still defining so as to not break the code
+LOSS:
+  module_name: torch.nn
+  subclass_name: CrossEntropyLoss
+
+OPTIMIZER:
+  module_name: torch.optim
+  subclass_name: Adam
+  lr: 0.0001
+  weight_decay: 0.00001
+
+SCHEDULER:
+  epoch_wise: false
+  module_name: torch.optim.lr_scheduler
+  subclass_name: CyclicLR
+  mode: triangular
+  cycle_momentum: false
+  step_size_up: 200
+  base_lr: 0.00005
+  max_lr: 0.0005
