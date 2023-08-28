@@ -1,13 +1,6 @@
-
-#
 # --------------------------------------------------------------------------------------------------------------------------
-# Created on Wed Jun 23 2022 at University of Toronto
-#
-# Author: Vishwesh Ramanathan
-# Email: vishwesh.ramanathan@mail.utoronto.ca
-# Description: This script is to run training representation learning using graphs using the modules
+# Description: This script is to run training multi graph view representation learning using graphs using the modules
 # --------------------------------------------------------------------------------------------------------------------------
-#
 import sys
 
 from pathlib import Path
