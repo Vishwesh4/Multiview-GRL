@@ -1,6 +1,6 @@
 # Self Supervised Multi-View Graph Representation Learning in Digital Pathology
 
-This repository contains the code for **Self Supervised Multi-View Graph Representation Learning in Digital Pathology** submitted to [GRAIL 2023](https://grail-miccai.github.io/). Please refer to the [paper]() for more details.
+This repository contains the code for **Self Supervised Multi-View Graph Representation Learning in Digital Pathology** submitted to [GRAIL 2023](https://grail-miccai.github.io/). Please refer to the [paper](https://link.springer.com/chapter/10.1007/978-3-031-55088-1_7) for more details.
 
 ## Description
 The shortage of annotated data in digital pathology presents a significant challenge for training GNNs. Inspired by pathologists who take multiple views of a histology slide under a microscope for exhaustive analysis, this project performs graph representation learning using self-supervision. The methodology leverages multiple graph views constructed from a given histology image to capture diverse information by maximizing mutual information across nodes and graph representations of different graph views, resulting in a comprehensive graph representation. The trained graph encoder weights for Feature Extractor (SimCLR),Infograph Cell, Infograph Patch and MultiView Graph is shared at this [link](https://drive.google.com/drive/folders/1myOGN-dKp8oG2460GjR0QzXKV6hcbhz-?usp=sharing).
@@ -67,3 +67,13 @@ If you want to contact, you can reach the authors by raising an issue or
 - Code was inspired from Infograph [repository](https://github.com/sunfanyunn/InfoGraph) and Pytorch Geometric [repository](https://github.com/pyg-team/pytorch_geometric/tree/master)
 
 ## Cite
+```
+@inproceedings{ramanathan2023self,
+  title={Self Supervised Multi-view Graph Representation Learning in Digital Pathology},
+  author={Ramanathan, Vishwesh and Martel, Anne L},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={74--84},
+  year={2023},
+  organization={Springer}
+}
+```
